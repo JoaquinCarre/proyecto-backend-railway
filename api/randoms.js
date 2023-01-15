@@ -3,7 +3,7 @@ import { Router } from 'express';
 import { fork } from 'child_process';
 import params from '../db-config/minimistConfig.js';
 
-const { PORT, MODE } = params;
+const { PORT_, MODE } = params;
 
 const router = Router();
 
@@ -29,7 +29,7 @@ router.get('/randoms', function (req, res, next) {
         forked.send(quantity);
         return;
       }
-      msg.push({text: `Servidor corriendo en puerto ${PORT} y en modo ${MODE}`})
+      msg.push({text: `Servidor corriendo en puerto ${PORT_} y en modo ${MODE}`})
       res.end(JSON.stringify(msg, null, 2));
     })
   }

@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "node ./archivos_desafio/autocannon/benchmark.js",
-    "start": "0x app.js",
-    "start2": "node .",
+    "start2": "0x app.js",
+    "start": "node .",
     "dev": "nodemon -r dotenv/config app.js",
     "dev:wait": "npx nodemon --exec 'node -r dotenv/config' app.js"
   },
