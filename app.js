@@ -21,7 +21,9 @@ import randoms from './api/randoms.js';
 import os from "os";
 import cluster from "cluster";
 
-const { PORT, MODE } = params;
+const { PORT_, MODE } = params;
+
+const PORT = process.env.PORT || PORT_ || 3000;
 
 if (MODE === 'cluster' && cluster.isPrimary) {
   for (let i = 0; i < os.cpus().length; i++) {
