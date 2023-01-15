@@ -14,7 +14,7 @@ import passport from 'passport';
 import { Strategy as LocalStrategy } from 'passport-local';
 import UserModel from './models/user.js';
 import { isValidPassword, encryptPassword } from './utils/passwordUtils.js'
-import { initialMessages, optionsMySQL, createTableProducts } from './db-config/createTables.js';
+import { initialMessages, optionsMySQL, createTableProducts } from './db-config/CreateTables.js';
 import params from './db-config/minimistConfig.js';
 import randoms from './api/randoms.js';
 import os from "os";
