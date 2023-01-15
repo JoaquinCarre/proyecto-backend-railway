@@ -1,0 +1,49 @@
+{
+  "name": "4--express-2",
+  "version": "1.0.0",
+  "description": "Ejercicio CoderHouse",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "node ./archivos_desafio/autocannon/benchmark.js",
+    "start": "0x app.js",
+    "start2": "node .",
+    "dev": "nodemon -r dotenv/config app.js",
+    "dev:wait": "npx nodemon --exec 'node -r dotenv/config' app.js"
+  },
+  "keywords": [
+    "ejercicio",
+    "coderhouse",
+    "back-end"
+  ],
+  "author": "Joaquín Carré",
+  "license": "ISC",
+  "dependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "0x": "^5.4.1",
+    "autocannon": "^7.10.0",
+    "bcrypt": "^5.1.0",
+    "compression": "^1.7.4",
+    "connect-mongo": "^4.6.0",
+    "express": "^4.18.1",
+    "express-generator": "^4.14.1",
+    "express-handlebars": "^6.0.6",
+    "express-session": "^1.17.3",
+    "firebase-admin": "^11.4.0",
+    "forever": "^4.0.3",
+    "knex": "^2.3.0",
+    "minimist": "^1.2.7",
+    "mongoose": "^6.8.2",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.20",
+    "normalizr": "^3.6.1",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "socket.io": "^4.5.2",
+    "sqlite3": "^5.1.4",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.3"
+  }
+}
