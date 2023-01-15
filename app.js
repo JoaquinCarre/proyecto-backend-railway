@@ -20,7 +20,7 @@ import randoms from './api/randoms.js';
 import os from "os";
 import cluster from "cluster";
 
-const { PORT_, MODE } = params;
+const { MODE } = params;
 
 const PORT = process.env.PORT || 3000;
 
