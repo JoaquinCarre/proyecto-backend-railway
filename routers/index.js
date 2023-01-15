@@ -5,6 +5,7 @@ import auth from './auth.js';
 import users from './users.js';
 import info from './info.js';
 import { logger } from "../logs/logger.js";
+import DB from '../contenedorFiles.js'
 
 import { optionsMySQL, createTableProducts, initialMessages } from '../db-config/CreateTables.js';
 
@@ -14,16 +15,17 @@ router.use('/', sessionLog, info);
 router.use('/auth', auth);
 router.use('/users', users);
 
-const products = new Contenedor(optionsMySQL, 'productos');
+/* const products = new Contenedor(optionsMySQL, 'productos'); */
+const products = new DB();
 
-let productos = [];
+let productos = await products.getAll();
 
 router.get('/', async (req, res, next) => {
     try {
-        await createTableProducts();
+/*         await createTableProducts(); */
         await initialMessages();
-        const getProductos = await products.getData();
-        productos = getProductos;
+/*         const getProductos = await products.getData();
+        productos = getProductos; */
         const data = {
             isEmpty: !productos.length
         };

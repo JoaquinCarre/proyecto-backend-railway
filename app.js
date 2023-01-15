@@ -19,6 +19,7 @@ import params from './db-config/minimistConfig.js';
 import randoms from './api/randoms.js';
 import os from "os";
 import cluster from "cluster";
+import DB from './contenedorFiles.js'
 
 const { MODE } = params;
 
@@ -135,10 +136,11 @@ if (MODE === 'cluster' && cluster.isPrimary) {
   function setEvents() {
     io.on("connection", async (socket) => {
       console.log(`usuario id "${socket.id}" conectado`);
-      await createTableProducts();
-      const products = new Contenedor(optionsMySQL, 'productos');
+      /* await createTableProducts(); */
+      /* const products = new Contenedor(optionsMySQL, 'productos');
       //AGREGADO DE PRODUCTOS
-      const dataProducts = products.getData();
+      const dataProducts = products.getData(); */
+      const dataProducts = await DB.getAll();
       socket.emit("history-products", await dataProducts)
       socket.on("nuevoProducto", async (data) => {
         products.insertData(data)
