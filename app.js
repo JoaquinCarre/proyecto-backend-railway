@@ -15,7 +15,6 @@ import { Strategy as LocalStrategy } from 'passport-local';
 import UserModel from './models/user.js';
 import { isValidPassword, encryptPassword } from './utils/passwordUtils.js'
 import { initialMessages, optionsMySQL, createTableProducts } from './db-config/createTables.js';
-//Agregado para el desafío 14: importar params y randoms
 import params from './db-config/minimistConfig.js';
 import randoms from './api/randoms.js';
 import os from "os";
@@ -23,7 +22,7 @@ import cluster from "cluster";
 
 const { PORT_, MODE } = params;
 
-const PORT = process.env.PORT || PORT_ || 3000;
+const PORT = process.env.PORT || 3000;
 
 if (MODE === 'cluster' && cluster.isPrimary) {
   for (let i = 0; i < os.cpus().length; i++) {
